@@ -22,7 +22,7 @@ public class LoginPage
 	private By loginButton=By.id("btnLogin");
 
 	
-	public void loginToApplication(String user,String pass)
+	public void loginToApplication(String user,String pass) // This is to login
 	{
 		Helper.waitForWebElementAndType(driver, username, user, "Enter username");
 		Helper.waitForWebElementAndType(driver, password, pass, "Enter password");
