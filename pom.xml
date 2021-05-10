@@ -55,7 +55,7 @@
 					</systemPropertyVariables> -->
 				
 					<suiteXmlFiles>
-						<suiteXmlFile>XMLFiles\${xmlFiles}</suiteXmlFile>
+						<suiteXmlFile>XMLFiles/Login.xml</suiteXmlFile>
 					</suiteXmlFiles> 
 				</configuration>
 			</plugin>
