@@ -22,8 +22,8 @@ public class LogoutPage
 	
 	public void logOutFromApplication()
 	{
-		Helper.waitForWebElementAndClick(driver, welcomeAdmin, "Click on admin button");
-		Helper.waitForWebElementAndClick(driver, logOff, "Click on logout button");
+//		Helper.waitForWebElementAndClick(driver, welcomeAdmin, "Click on admin button");
+//		Helper.waitForWebElementAndClick(driver, logOff, "Click on logout button");
 	}
 	
 }

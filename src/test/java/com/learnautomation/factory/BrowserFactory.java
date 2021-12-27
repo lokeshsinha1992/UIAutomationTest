@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
@@ -56,7 +57,7 @@ public class BrowserFactory {
 		}
 		
 		try {
-			driver=new RemoteWebDriver(new URL(DataProviderFactory.getConfig().getData("HUBURL")),cap);
+			driver=new RemoteWebDriver(new URL("http://172.18.0.2:4444"),cap);
 		} catch (MalformedURLException e) 
 		{
 			System.out.println("LOG:ERROR -hub is not reachable" +e.getMessage());
@@ -83,6 +84,9 @@ public class BrowserFactory {
 		if(browserType.equalsIgnoreCase("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDrivers/chromedriver.exe");
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			chromeOptions.setHeadless(true);
+//			driver=new ChromeDriver(chromeOptions);	
 			driver=new ChromeDriver();	
 		}
 		else if(browserType.equalsIgnoreCase("Firefox"))
