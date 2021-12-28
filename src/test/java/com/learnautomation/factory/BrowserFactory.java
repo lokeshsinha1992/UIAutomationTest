@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -84,10 +85,15 @@ public class BrowserFactory {
 		if(browserType.equalsIgnoreCase("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDrivers/chromedriver.exe");
-//			ChromeOptions chromeOptions = new ChromeOptions();
-//			chromeOptions.setHeadless(true);
-//			driver=new ChromeDriver(chromeOptions);	
-			driver=new ChromeDriver();	
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("headless");
+			driver=new ChromeDriver(chromeOptions);	
+			
+			
+			
+			// driver=new HtmlUnitDriver(true);
+
+			
 		}
 		else if(browserType.equalsIgnoreCase("Firefox"))
 		{
