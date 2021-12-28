@@ -118,7 +118,7 @@ public class Helper {
 	
 	public static void waitForWebElementAndClick(WebDriver driver,String xpath,String stepInfo)
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath))).click();
 		
@@ -127,7 +127,7 @@ public class Helper {
 	
 	public static void waitForWebElementAndClick(WebDriver driver,By element,String stepInfo)
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		
 		WebElement ele=wait.until(ExpectedConditions.elementToBeClickable(element));
 		
@@ -140,7 +140,7 @@ public class Helper {
 	
 	public static void waitForWebElementAndType(WebDriver driver,By element,String textToByTyped,String stepInfo)
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		
 		WebElement ele=wait.until(ExpectedConditions.elementToBeClickable(element));
 		
@@ -153,7 +153,7 @@ public class Helper {
 	
 	public static void waitForWebElementAndType(WebDriver driver,String xpath,String textToByTyped,String stepInfo)
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath))).sendKeys(textToByTyped);
 		
@@ -163,14 +163,14 @@ public class Helper {
 	
 	public static WebElement waitForWebElement(WebDriver driver,String xpath)
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait=new WebDriverWait(driver, 20);
 		
 		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 	}
 	
 	public static void handleAlertAndVerifyPartialText(WebDriver driver,String expectedText)
 	{
-		Alert alt=new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.alertIsPresent());
+		Alert alt=new WebDriverWait(driver, 20).until(ExpectedConditions.alertIsPresent());
 		
 		if(alt.getText().contains(expectedText))
 		{
@@ -186,7 +186,7 @@ public class Helper {
 	
 	public static void handleAlertAndVerifyText(WebDriver driver,String expectedText)
 	{
-		Alert alt=new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.alertIsPresent());
+		Alert alt=new WebDriverWait(driver, 20).until(ExpectedConditions.alertIsPresent());
 		
 		if(alt.getText().equalsIgnoreCase(expectedText))
 		{
