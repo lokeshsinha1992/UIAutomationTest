@@ -46,7 +46,7 @@ public class GridTest {
 //      driver.findElement(By.xpath(".//*[@id = 'menu']/div[4]/div[3]/a")).click();
 //      
 	   
-	   //this is test
+	   //   this is test
 //      // Enter value 10 in the first number of the percent Calculator
 //      driver.findElement(By.id("cpar1")).sendKeys("10");
 //      
