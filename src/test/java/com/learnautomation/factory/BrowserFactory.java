@@ -15,6 +15,10 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BrowserFactory {
 	
 	// create method with Platform name,version Browser name,version
@@ -84,14 +88,15 @@ public class BrowserFactory {
 		
 		if(browserType.equalsIgnoreCase("Chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDrivers/chromedriver.exe");
+//			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDrivers/chromedriver.exe");
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("headless");
+			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver(chromeOptions);	
 			
 			
 			
-			// driver=new HtmlUnitDriver(true);
+		//	 driver=new HtmlUnitDriver(BrowserVersion.CHROME);
 
 			
 		}
