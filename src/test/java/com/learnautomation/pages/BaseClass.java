@@ -61,7 +61,7 @@ public class BaseClass {
 		String browser=DataProviderFactory.getConfig().getData("Browser");
 		String url=DataProviderFactory.getConfig().getData("stagingURL");
 		//driver = BrowserFactory.startBrowser(browser,url);
-		driver = BrowserFactory.startBrowserOnHub("Windows", "Chrome", url);
+		driver = BrowserFactory.startBrowser("Chrome", url);
 		
 		System.out.println("****LOG:INFO - Started Browser Session****");
 	}
