@@ -1,6 +1,8 @@
 package com.learnautomation.testcases;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -8,6 +10,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -25,10 +29,12 @@ public class GridTest {
       
        
          System.out.println(" Executing on CHROME");
-         DesiredCapabilities cap = new DesiredCapabilities();
-         cap.setBrowserName("chrome");
+         
+         DesiredCapabilities capability = new DesiredCapabilities();
+         capability.setBrowserName("chrome");
+         
          String Node = "http://localhost:4444/wd/hub";
-         driver = new RemoteWebDriver(new URL(Node), cap);
+         driver = new RemoteWebDriver(new URL(Node), capability);
          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
          
          // Launch website

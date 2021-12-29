@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.learnautomation.testcases.LoginTest">
+      <class name="com.learnautomation.testcases.GridTest">
         <methods>
-          <include name="logout"/>
-          <include name="loginWithAdmin"/>
-          <include name="setupReport"/>
-          <include name="closeSession"/>
-          <include name="startSession"/>
-          <include name="tearDownReport"/>
+          <include name="calculatepercent"/>
+          <include name="closeBrowser"/>
+          <include name="launchapp"/>
         </methods>
-      </class> <!-- com.learnautomation.testcases.LoginTest -->
+      </class> <!-- com.learnautomation.testcases.GridTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
