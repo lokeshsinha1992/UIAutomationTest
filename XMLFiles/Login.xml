@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="com.learnautomation.testcases.GridTest"/>
+      <class name="com.learnautomation.testcases.LoginTest"/>
     </classes>
     </test>
 </suite> <!-- Suite -->
