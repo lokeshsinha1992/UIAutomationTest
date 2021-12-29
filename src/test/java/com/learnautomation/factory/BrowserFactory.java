@@ -80,7 +80,7 @@ public class BrowserFactory {
 //	
 	
 	
-	public static WebDriver startBrowser(String browserType,String urlToAutomate)
+	public static WebDriver startBrowser(String browserType,String urlToAutomate) throws MalformedURLException
 	{
 		
 		System.out.println("****LOG:INFO-Starting browser session****");
@@ -88,11 +88,36 @@ public class BrowserFactory {
 		
 		if(browserType.equalsIgnoreCase("Chrome"))
 		{
-//			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDrivers/chromedriver.exe");
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("headless");
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver(chromeOptions);	
+			
+			
+			
+         DesiredCapabilities caps = new DesiredCapabilities();
+		 	
+		    caps.setCapability("browserName", "chrome");
+		    
+		    caps.setCapability("os", "Windows");
+		    
+		    caps.setCapability("os_version", "10");
+		    
+		   
+		    
+		    caps.setCapability("name", "Bstack-[Java] Selenium Test");
+		    
+		    final String USERNAME = "lokeshsinha_bGyzeF";
+			final String AUTOMATE_KEY = "M7AgY9FbNBx7nLfRj5Up";
+			final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+			
+		    
+		     driver=new RemoteWebDriver(new URL(URL), caps);
+			
+////			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/BrowserDrivers/chromedriver.exe");
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			chromeOptions.addArguments("headless");
+//			WebDriverManager.chromedriver().setup();
+//			driver=new ChromeDriver(chromeOptions);	
+//			
+			
+			
 			
 			
 			

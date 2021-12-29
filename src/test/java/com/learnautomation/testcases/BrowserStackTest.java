@@ -20,17 +20,22 @@ public class BrowserStackTest
 		
 		 	DesiredCapabilities caps = new DesiredCapabilities();
 		 	
-		    caps.setCapability("browserName", "android");
+		    caps.setCapability("browserName", "chrome");
 		    
-		    caps.setCapability("device", "Samsung Galaxy S20");
+		    caps.setCapability("os", "Windows");
 		    
-		    caps.setCapability("realMobile", "true");
+		    caps.setCapability("os_version", "10");
 		    
-		    caps.setCapability("os_version", "10.0");
+		   
 		    
 		    caps.setCapability("name", "Bstack-[Java] Selenium Test");
 		    
-		    WebDriver driver=new RemoteWebDriver(new URL("https://mukeshotwani3:s4GTbs4fFzQxJxzpzp2f@hub-cloud.browserstack.com/wd/hub"), caps);
+		    final String USERNAME = "lokeshsinha_bGyzeF";
+			final String AUTOMATE_KEY = "M7AgY9FbNBx7nLfRj5Up";
+			final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+			
+		    
+		    WebDriver driver=new RemoteWebDriver(new URL(URL), caps);
 		    
 		    driver.get("http://www.google.com");
 		    

@@ -1,6 +1,7 @@
 package com.learnautomation.pages;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
@@ -55,7 +56,7 @@ public class BaseClass {
  */
 	
 	@BeforeClass
-	public void startSession() 
+	public void startSession() throws MalformedURLException 
 	{
 		System.out.println("****LOG:INFO - Starting Browser Session****");
 		String browser=DataProviderFactory.getConfig().getData("Browser");
